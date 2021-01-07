@@ -1,0 +1,40 @@
+.form-components {
+  margin-top: 10rem;
+  font-weight: bold;
+  height: 180vh;
+}
+/* Form Component */
+.section-form-transfer .forms {
+  display: grid;
+  margin: 0 auto;
+  margin-top: 1rem;
+  width: 50%;
+}
+
+.section-form-transfer .forms__form input {
+  padding: 1.7rem;
+  display: block;
+  width: 100%;
+  margin-top: 1rem;
+  outline: none;
+  border: 1px solid lightgray;
+}
+.section-form-transfer .forms__form label {
+  color: #34495e;
+}
+.section-form-transfer .forms__form input::-webkit-input-placeholder {
+  color: #7f8c8d;
+  font-size: 1.5rem;
+}
+
+h2 {
+  margin: 4rem;
+  text-align: center;
+}
+.checkouts,
+.personal-info {
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}

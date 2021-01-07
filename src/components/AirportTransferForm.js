@@ -1,37 +1,43 @@
+import React, { useState } from "react";
+import  AirportTransferFormCreditCard  from "./AirportTransferFormCreditCard";
+import AirportTransferFormPaypal from "./AirportTransferFormPaypal";
 import "./css/AirportTransferForm.css";
-import AirportTransferTabs from "./AirportTransferTabs";
+import paypalIcon from"./svg/paypal.svg";
+import cardIcon from "./svg/credit-card.svg"
 function AirportTransferForm(){
+
+    const [CurrentForm,setForm] = useState(<AirportTransferFormCreditCard />);
+    const [currentCC,setCurrentCC] = useState("current switch-tab__tab");
+
+    const [currentPaypal,setCurrentPaypal] = useState("switch-tab__tab");
     return (
-      <section className="section-form-transfer">
-        <AirportTransferTabs />
-        <form className="forms" action="/payments">
-        <div className="forms__form email-form">
-          <label htmlFor="email">Email</label>
-          <input type="email" id="email" name="email" />
-          </div>
-  
-          <div className="forms__form ">
-          <label htmlFor="name-on-card">Name On Card</label>
-          <input type="text" id="name-on-card" name="name-on-card" />
-          </div>
-  
-          <div className="forms__form">
-          <label htmlFor="ccn">Card Number</label>
-          <input id="ccn" name="ccn" type="tel" inputMode="numeric" pattern="[0-9\s]{13,19}" autoComplete="cc-number" maxLength="19" placeholder="0000 0000 0000 0000"/>
-          </div>
-  
-          <div className="forms__form">
-          <label htmlFor="cvc">CVC Code</label>
-          <input id="cvc" name="cvc" type="tel" />
-          </div>
-  
-          <div className="forms__form">
-          <label htmlFor="exp">Expiration Date</label>
-          <input id="exp" type="month" placeholder="MM/YY"/>
-          </div>
-  
-        </form>
-        </section>
+        <section className="section-airport-transfer-form">
+            <p>Payment Methods</p>
+
+<div className="switch-tab">
+        <div className={currentCC} onClick={() => {
+
+          setForm(<AirportTransferFormCreditCard />);
+          setCurrentCC("current switch-tab__tab");
+
+          setCurrentPaypal("switch-tab__tab")
+        }}>
+          <img id="card-icon" src={cardIcon} />
+        <span>Card</span>
+        </div>
+        <div className={currentPaypal} onClick={() => {
+
+          setForm(<AirportTransferFormPaypal />);
+          setCurrentCC("switch-tab__tab");
+          setCurrentPaypal("current switch-tab__tab")
+          
+        }}>
+        <img id="paypal-icon" src={paypalIcon} alt="Paypal Icon" />
+        </div>
+      </div>
+      {CurrentForm}
+
+      </section>
     )
-  }
-export default AirportTransferForm;
+    }
+    export default AirportTransferForm;

@@ -1,56 +1,41 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-html {
-  font-family: "Open Sans", "Arial", sans-serif;
-}
-.form-components {
-  margin-top: 10rem;
-  font-weight: bold;
-}
-/* Form Component */
-.section-form-transfer .forms {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 1rem;
-  margin: 0 auto;
-  margin-top: 1rem;
-  width: 50%;
-}
-.section-form-transfer .email-form {
-  grid-column: span 2;
-}
-.section-form-transfer .forms__form input {
-  padding: 1rem;
-  display: block;
-  width: 100%;
-  margin-top: 1rem;
-  outline: none;
-  border: 1px solid lightgray;
-}
-.section-form-transfer .forms__form label {
-  color: #34495e;
-}
-.section-form-transfer .forms__form input::-webkit-input-placeholder {
-  color: #7f8c8d;
-  font-size: 1rem;
-}
-/* Tab Compenent */
-.section-form-transfer .switch-tab {
+.switch-tab {
   display: flex;
   justify-content: center;
 }
-.section-form-transfer .switch-tab span {
-  margin: 2rem;
-  padding: 1rem 2rem;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.096);
-  cursor: pointer;
-  display: block;
+.section-airport-transfer-form {
+  color: #34495e;
 }
-.section-form-transfer .current {
-  background-color: #1abc9c;
+.section-airport-transfer-form p {
+  text-align: center;
+}
+.switch-tab__tab {
+  margin: 2rem;
+  padding: 0.7rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.126);
+  border-radius: 0.3rem;
+  cursor: pointer;
+  width: 17rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transform: translateY(0rem);
+  transition: transform 400ms;
+}
+.switch-tab__tab:hover {
+  transform: translateY(-0.5rem);
+}
+.switch-tab__tab span {
+  margin: 0.4rem;
+  display: inline-block;
+}
+.switch-tab__tab #card-icon {
+  width: 4.5rem;
+}
+.switch-tab__tab #paypal-icon {
+  width: 5.5rem;
+}
+.current {
+  /* color: #fff; */
+  border-bottom: 3px solid #273c75;
 }

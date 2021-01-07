@@ -1,0 +1,15 @@
+.switch-forms {
+  display: flex;
+  justify-content: space-around;
+}
+.switch-forms__form {
+  padding: 1.7rem;
+  cursor: pointer;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.123);
+  width: 23rem;
+  text-align: center;
+}
+.current-form {
+  background-color: #273c75;
+  color: #fff;
+}
